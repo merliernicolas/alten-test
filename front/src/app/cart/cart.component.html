@@ -1,0 +1,13 @@
+<h1 class="text-center">Mon Panier</h1>
+
+<p-dataView [value]="cart()">
+  <ng-template pTemplate="list" let-product>
+    <p-card class="block mb-2">
+      <div class="text-lg font-medium text-900">{{ product.name }}</div>
+      <div class="text-lg text-secondary">Quantité : {{ product.quantity }}</div>
+      <div class="flex gap-3 mt-1">
+        <p-button label="Retirer" severity="danger" (onClick)="onRemoveFromCart(product)"></p-button>
+      </div>
+    </p-card>
+  </ng-template>
+</p-dataView>
